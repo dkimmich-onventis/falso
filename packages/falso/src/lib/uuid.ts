@@ -22,7 +22,7 @@ export function randUuid<Options extends FakeOptions = never>(
   return fake(
     () =>
       uuidv4({
-        random: randNumber({ min: 0, max: 255, length: 16 }),
+        random: Uint8Array.of(...randNumber({ min: 0, max: 255, length: 16 })),
       }),
     options
   );

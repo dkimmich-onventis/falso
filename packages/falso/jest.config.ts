@@ -1,3 +1,5 @@
+import type { Config } from 'jest';
+
 /* eslint-disable */
 export default {
   displayName: 'falso',
@@ -12,7 +14,8 @@ export default {
       },
     ],
   },
+  transformIgnorePatterns: ['<rootDir>/node_modules/(?!uuid)'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/packages/falso',
   preset: '../../jest.preset.js',
-};
+} satisfies Config;
